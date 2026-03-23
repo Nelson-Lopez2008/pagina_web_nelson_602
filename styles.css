@@ -1,0 +1,59 @@
+/* Encabezado */
+header {
+    background-color: #015b72;   
+    color: #ffffff;              
+    text-align: center;
+}
+/* Menú de navegación */
+nav {
+    background-color: #a3a4f9;   
+    text-align: center;
+    padding: 12px;
+}
+
+/* Enlaces del menú */
+nav a {
+    color: #14c7a9;              
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+/* Efecto al pasar el mouse */
+nav a:hover {
+    color: #2fdb18;              
+}
+/* Estilo general de la página */
+body {
+    font-family: 'Times New Roman', Helvetica, sans-serif;
+    background-color: #71028d;   
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Secciones */
+section {
+    background-color: #1e00a1;   
+    margin: 20px auto;
+    padding: 20px;
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(102, 72, 223, 0.1); 
+}
+
+/* Imágenes */
+img {
+    width: 400px;       
+    height: auto;       
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Pie de página */
+footer {
+    background-color: #d40404;   
+    color: #0a0679;              
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
