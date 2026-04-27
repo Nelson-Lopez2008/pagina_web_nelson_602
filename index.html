@@ -24,8 +24,10 @@ html lang="en">
     
     <section id="sobre-el-Proyecto-pec">
       <h2>Sobre el proyecto pec</h2>
-      <P> id= "mensaje" style="display:none"</P>
-      <button> onclick="MostrarMensaje()">perros</button>
+
+      <P id="mensaje" class="mensaje" style="display:none;"></P>
+      <button data-target="mensaje" onclick="MostrarMensaje()">perros</button>
+
     <img src="img/bnanner.png"alt ="" width="300" height="200">
       <p>Información personal.</p>
     </section>
@@ -34,6 +36,7 @@ html lang="en">
     <footer>
       <p>2026 - mi nombre</p>
     </footer>
+
     <script src="script.js"></script>
   </body>
 </html>
