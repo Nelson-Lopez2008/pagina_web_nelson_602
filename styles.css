@@ -1,81 +1,54 @@
-/* Encabezado */
-header {
-    background-color: #015b72;   
-    color: #ffffff;              
-    text-align: center;
-}
-/* Menú de navegación */
-nav {
-    background-color: #a3a4f9;   
-    text-align: center;
-    padding: 12px;
-}
-
-/* Enlaces del menú */
-nav a {
-    color: #14c7a9;              
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-}
-
-/* Efecto al pasar el mouse */
-nav a:hover {
-    color: #2fdb18;              
-}
-/* Estilo general de la página */
-body {
-    font-family: 'Times New Roman', Helvetica, sans-serif;
-    background-color: #71028d;   
-    margin: 0;
-    line-height: 1.6;
-}
-
-/* Secciones */
-section {
-    background-color: #1e00a1;   
-    margin: 20px auto;
-    padding: 20px;
-    width: 50%;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(102, 72, 223, 0.1); 
-}
-
-/* Imágenes */
-img {
-    width: 400px;       
-    height: auto;       
-    border-radius: 10px;
-    margin-top: 10px;
+function toggleMensaje(button) {
+    const targetId = button.getAttribute('data-target');
+    const mensaje = document.getElementById(targetId);
+    
+    if (!mensaje) return;
+    
+    if (mensaje.classList.contains('visible')) {
+        mensaje.classList.remove('visible');
+        mensaje.classList.add('hidden');
+        
+        if (targetId === 'mensaje1') {
+            button.textContent = 'Mostrar mensaje Sobre mi';
+        } else if (targetId === 'mensaje') {
+            button.textContent = 'Mostrar mensaje Sobre El PEC';
+        } else if (targetId === 'pec-video') {
+            button.textContent = 'Ver video sobre cuidado animal';
+        }
+        
+        setTimeout(() => {
+            mensaje.style.display = 'none';
+            mensaje.classList.remove('hidden');
+        }, 400);
+    } else {
+        if (targetId === 'mensaje') {
+            mensaje.innerHTML = 'Cuida y protege a los animales';
+        } else if (targetId === 'mensaje1') {
+            mensaje.innerHTML = 'Hola espero que tengas un lindo dia :)';
+        }
+        
+        mensaje.style.display = 'block';
+        mensaje.offsetHeight;
+        mensaje.classList.add('visible');
+        
+        if (targetId === 'mensaje1') {
+            button.textContent = 'Ocultar mensaje Sobre mi';
+        } else if (targetId === 'mensaje') {
+            button.textContent = 'Ocultar mensaje Sobre El PEC';
+        } else if (targetId === 'pec-video') {
+            button.textContent = 'Ocultar video sobre cuidado animal';
+        }
+    }
 }
 
-/* Pie de página */
-footer {
-    background-color: #04d449;   
-    color: #0a0679;              
-    text-align: center;
-    padding: 10px;
-    margin-top: 20px;
+function MostrarMensaje() {
+    toggleMensaje(event.target);
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #2fdb18;
-    color: aqua;
-    border:none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.1s,background-color 0.3s;
+function MostrarMensaje1() {
+    toggleMensaje(event.target);
 }
 
-button:active {
-    transform: scale(0.95);
-    background-color: bisque;
-}
-
-mensaje {
-    display: none;
-    opacity: 0;
-    transform: tran;
+function MostrarVideoPec() {
+    toggleMensaje(event.target);
 }

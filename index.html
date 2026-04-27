@@ -1,48 +1,89 @@
-html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mi primera pagina web</title>
-    <link rel="stylesheet" href="styles.css"/>
-  </head>
-  <body>
-    <header>
-      <h1>Mi Página Personal</h1>
-    </header>
+<!doctype html>
+<html lang="en">
 
-    <nav><!doctype html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi primera pagina web</title>
 
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#proyecto-pec">Proyecto PEC</a>
-    </nav>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-    <section id="sobre-mi">
-      <h2>Sobre mí</h2>
+<body>
+  <header>
+    <h1>Mi Página Personal</h1>
+  </header>
 
-      <P id="mensaje" class="mensaje" style="display:none;"></P>
-      <button data-target="mensaje" onclick="MostrarMensaje()">Sobre sheila</button>
+   <nav>
+      <a href="#Sobre_mí">Sobre mí</a>
+      <a href="#Proyecto_PEC">Proyecto PEC</a>
+      </nav>
 
-      <p>Información personal.</p>
+  <section id="Sobre_mí">
 
-      <img src="img/Tarjeta de Presentación Psicóloga Profesional Geométrico Rosa y Blanco.png"alt ="foto personal" width="300" height="200">
-    </section>
+    <h2>Sobre mí</h2>
+
+<p id="mensaje1" class="mensaje" style="display:none;"></p> 
+    <button data-target="mensaje1" onclick="MostrarMensaje1()">Mostrar mensaje Sobre mi</button>
+
+    <p>Hola, soy Nelson enrique Lopez. Me apasiona la tecnología y todo lo relacionado con ello.
+      Disfruto aprender y compartir conocimientos, además de crear materiales visuales que inspiren y eduquen.</p>
+    <img src="img/Tarjeta de presentacion veronica.png" alt="foto personal">
+  </section>
+
+   <section id="Proyecto_PEC">
+    <h2>Proyecto PEC Huellas: cuidado animal y salud comunitaria</h2>
+
+    <p id="mensaje" class="mensaje" style="display:none;"></p> 
+    <button data-target="mensaje" onclick="MostrarMensaje()">Mostrar mensaje Sobre El PEC</button>
+
+    <p>Este proyecto busca concientizar sobre la importancia del cuidado de los animales y la salud comunitaria.
+      A través de carteles, charlas y actividades escolares, promovemos el respeto hacia los animales y la
+      responsabilidad en su alimentación, higiene y bienestar.</p>
+    <p>Mi objetivo es que la ciencia y la educación se conviertan en herramientas para mejorar la vida de nuestra
+      comunidad.</p>
     
-    <section id="sobre-el-Proyecto-pec">
-      <h2>Sobre el proyecto pec</h2>
+    <div class="pec-banner">
+        <p>🐾 Huellas que cuidan, comunidad que crece 🌱</p>
+    </div>
 
-      <P id="mensaje" class="mensaje" style="display:none;"></P>
-      <button data-target="mensaje" onclick="MostrarMensaje()">perros</button>
+    <img src="img/Campaña de esterilizacion (1).png" alt="Personas conviviendo con sus mascotas">
 
-      <p>Proyecto PEC de cuidado animal.</p>
+    <button data-target="pec-video" onclick="MostrarVideoPec()">Ver video sobre cuidado animal</button>
+    <div id="pec-video" class="mensaje" style="display:none;">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/ScMzIvxBSi4" title="Video sobre cuidado animal" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
 
-      <img src="img/bnanner.png"alt ="" width="300" height="200">
-    </section>
+    <div class="pec-card">
+        <h3>🐶 Adopción responsable</h3>
+        <p>Fomentamos la adopción de perritos y gatitos, asegurando que cada familia esté preparada para brindarles amor y cuidados.</p>
+    </div>
 
+    <div class="pec-card">
+        <h3>🩺 Salud comunitaria</h3>
+        <p>Organizamos campañas de vacunación y esterilización para mejorar la calidad de vida de nuestras mascotas y prevenir enfermedades.</p>
+    </div>
 
-    <footer>
-      <p>2026 - Nelson Y sheila</p>
-    </footer>
+    <div class="pec-card">
+        <h3>🌱 Educación y respeto</h3>
+        <p>Promovemos actividades escolares que enseñan a los niños la importancia de cuidar a los animales y al medio ambiente.</p>
+    </div>
 
-    <script src="script.js"></script>
-  </body>
+  </section>
+
+  <footer>
+    <p>2026 - Mi nombre es Verónica Fabiola Marcos Marcos</p>
+    <p>Contacto: VeroFabiM6@gmail..com | Redes sociales: Facebook - Instagram</p>
+  </footer>
+
+  <!-- Botón de WhatsApp -->
+<a href="https://wa.me" class="whatsapp-btn" target="_blank">
+  <img src="img/icon whatsapp.jpg" alt="WhatsApp">
+</a>
+
+<script src="Script.js"> </script>
+</body>
+
 </html>
