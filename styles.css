@@ -1,65 +1,45 @@
-function toggleMensaje(button) {
+function mostrarmensaje() {
+    let mensaje = document.getElementById("mensaje");
+    mensaje.innerHTML = "Cuida y protege a los animales";
+    mensaje.style.display = "block";
 
-    const targetId = button.getAttribute('data-target');
-    const mensaje = document.getElementById(targetId);
+    setTimeout(() => {
+        mensaje.style.opacity = "1";
+        mensaje.style.transform = "translateY(0)";
+    }, 50);
+}
 
-    // Si no existe el elemento, salir
-    if (!mensaje) return;
+function mostrarmensajepersonal() {
+    let mensaje = document.getElementById("mostrarmensajepersonal");
+    mensaje.innerHTML = "Bienvenidos a mi página";
+    mensaje.style.display = "block";
 
-    // Textos para cada mensaje
-    const textos = {
-        mensaje: 'Cuida y protege a los animales',
-        mensaje1: 'Hola espero que tengas un lindo día :)'
-    };
+    setTimeout(() => {
+        mensaje.style.opacity = "1";
+        mensaje.style.transform = "translateY(0)";
+    }, 50);
+}
 
-    // Textos de botones
-    const botones = {
-        mensaje: {
-            mostrar: 'Mostrar mensaje Sobre El PEC',
-            ocultar: 'Ocultar mensaje Sobre El PEC'
-        },
+// 🌙 Modo oscuro
+const button = document.getElementById("theme-toggle");
 
-        mensaje1: {
-            mostrar: 'Mostrar mensaje Sobre mí',
-            ocultar: 'Ocultar mensaje Sobre mí'
-        },
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+}
 
-        'pec-video': {
-            mostrar: 'Ver video sobre cuidado animal',
-            ocultar: 'Ocultar video sobre cuidado animal'
-        }
-    };
+button.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
 
-    // SI YA ESTÁ VISIBLE
-    if (mensaje.classList.contains('visible')) {
-
-        mensaje.classList.remove('visible');
-        mensaje.classList.add('hidden');
-
-        // Cambiar texto del botón
-        button.textContent = botones[targetId].mostrar;
-
-        // Esperar animación
-        setTimeout(() => {
-            mensaje.style.display = 'none';
-            mensaje.classList.remove('hidden');
-        }, 400);
-
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
     } else {
+        localStorage.setItem("theme", "light");
+    }
+});
 
-        // Agregar texto si existe
-        if (textos[targetId]) {
-            mensaje.textContent = textos[targetId];
-        }
-
-        mensaje.style.display = 'block';
-
-        // Fuerza reflow para animación
-        mensaje.offsetHeight;
-
-        mensaje.classList.add('visible');
-
-        // Cambiar texto del botón
-        button.textContent = botones[targetId].ocultar;
+// Detectar preferencia del sistema
+if (!localStorage.getItem("theme")) {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.body.classList.add("dark-mode");
     }
 }

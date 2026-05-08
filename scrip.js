@@ -1,55 +1,110 @@
-
-function toggleMensaje(button) {
-    const targetId = button.getAttribute('data-target');
-    const mensaje = document.getElementById(targetId);
-    
-    if (!mensaje) return;
-    
-    if (mensaje.classList.contains('visible')) {
-        mensaje.classList.remove('visible');
-        mensaje.classList.add('hidden');
-        
-        if (targetId === 'mensaje1') {
-            button.textContent = 'Mostrar mensaje Sobre mi';
-        } else if (targetId === 'mensaje') {
-            button.textContent = 'Mostrar mensaje Sobre El PEC';
-        } else if (targetId === 'pec-video') {
-            button.textContent = 'Ver video sobre cuidado animal';
-        }
-        
-        setTimeout(() => {
-            mensaje.style.display = 'none';
-            mensaje.classList.remove('hidden');
-        }, 400);
-    } else {
-        if (targetId === 'mensaje') {
-            mensaje.innerHTML = 'Cuida y protege a los animales';
-        } else if (targetId === 'mensaje1') {
-            mensaje.innerHTML = 'Hola espero que tengas un lindo dia :)';
-        }
-        
-        mensaje.style.display = 'block';
-        mensaje.offsetHeight;
-        mensaje.classList.add('visible');
-        
-        if (targetId === 'mensaje1') {
-            button.textContent = 'Ocultar mensaje Sobre mi';
-        } else if (targetId === 'mensaje') {
-            button.textContent = 'Ocultar mensaje Sobre El PEC';
-        } else if (targetId === 'pec-video') {
-            button.textContent = 'Ocultar video sobre cuidado animal';
-        }
-    }
+:root {
+  --bg-color: #71cc69;
+  --text-color: #2dc973;
 }
 
-function MostrarMensaje() {
-    toggleMensaje(event.target);
+.dark-mode {
+  --bg-color: hwb(101 9% 0% / 0);
+  --text-color: #2ceb1b;
 }
 
-function MostrarMensaje1() {
-    toggleMensaje(event.target);
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  line-height: 1.6;
+  animation: aparecer 1s ease-in;
 }
 
-function MostrarVideoPec() {
-    toggleMensaje(event.target);
+h1 {
+  color: rgba(173, 231, 139, 0.6);
+}
+
+header {
+  background-color: rgba(0, 110, 255, 0.7);
+  color: rgb(4, 8, 12);
+  text-align: center;
+  padding: 30px 20px;
+}
+
+nav {
+  background-color: rgba(151, 113, 113, 0.4);
+  text-align: center;
+  padding: 12px;
+}
+
+nav a {
+  color: rgb(175, 10, 10);
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: rgb(0, 0, 0);
+}
+
+section {
+  background: hsl(172, 84%, 36%);
+  margin: 20px auto;
+  padding: 20px;
+  width: 80%;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px #15c9cfce;
+  transition: transform 0.3s;
+}
+
+section:hover {
+  transform: translateY(-5px);
+}
+
+img {
+  border-radius: 10px;
+  margin-top: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px #26fff44d;
+}
+
+footer {
+  background-color: rgba(0, 55, 236, 0.95);
+  color: black;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #000000;
+  color: black;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.1s, background-color 0.3s;
+}
+
+button:active {
+  transform: scale(0.95);
+  background-color: hwb(113 8% 29%);
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+p {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
 }
