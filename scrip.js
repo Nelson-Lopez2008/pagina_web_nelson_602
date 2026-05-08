@@ -1,110 +1,45 @@
-:root {
-  --bg-color: #71cc69;
-  --text-color: #2dc973;
+function mostrarmensaje() {
+    let mensaje = document.getElementById("mensaje");
+    mensaje.innerHTML = "Cuida y protege a los animales";
+    mensaje.style.display = "block";
+
+    setTimeout(() => {
+        mensaje.style.opacity = "1";
+        mensaje.style.transform = "translateY(0)";
+    }, 50);
 }
 
-.dark-mode {
-  --bg-color: hwb(101 9% 0% / 0);
-  --text-color: #2ceb1b;
+function mostrarmensajepersonal() {
+    let mensaje = document.getElementById("mostrarmensajepersonal");
+    mensaje.innerHTML = "Bienvenidos a mi página";
+    mensaje.style.display = "block";
+
+    setTimeout(() => {
+        mensaje.style.opacity = "1";
+        mensaje.style.transform = "translateY(0)";
+    }, 50);
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  margin: 0;
-  line-height: 1.6;
-  animation: aparecer 1s ease-in;
+// 🌙 Modo oscuro
+const button = document.getElementById("theme-toggle");
+
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
 }
 
-h1 {
-  color: rgba(173, 231, 139, 0.6);
-}
+button.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
 
-header {
-  background-color: rgba(0, 110, 255, 0.7);
-  color: rgb(4, 8, 12);
-  text-align: center;
-  padding: 30px 20px;
-}
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+    } else {
+        localStorage.setItem("theme", "light");
+    }
+});
 
-nav {
-  background-color: rgba(151, 113, 113, 0.4);
-  text-align: center;
-  padding: 12px;
-}
-
-nav a {
-  color: rgb(175, 10, 10);
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
-}
-
-nav a:hover {
-  color: rgb(0, 0, 0);
-}
-
-section {
-  background: hsl(172, 84%, 36%);
-  margin: 20px auto;
-  padding: 20px;
-  width: 80%;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px #15c9cfce;
-  transition: transform 0.3s;
-}
-
-section:hover {
-  transform: translateY(-5px);
-}
-
-img {
-  border-radius: 10px;
-  margin-top: 10px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 5px 15px #26fff44d;
-}
-
-footer {
-  background-color: rgba(0, 55, 236, 0.95);
-  color: black;
-  text-align: center;
-  padding: 10px;
-  margin-top: 20px;
-}
-
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #000000;
-  color: black;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.1s, background-color 0.3s;
-}
-
-button:active {
-  transform: scale(0.95);
-  background-color: hwb(113 8% 29%);
-}
-
-@keyframes aparecer {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-p {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.5s ease;
+// Detectar preferencia del sistema
+if (!localStorage.getItem("theme")) {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.body.classList.add("dark-mode");
+    }
 }
