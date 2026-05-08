@@ -24,7 +24,7 @@
     }
 
     .clicked {
-      background-color: #00215e;
+      background-color: #2ecc71;
     }
   </style>
 </head>
@@ -67,7 +67,103 @@
       </a>
     </button>
   </section>
+<div class="faq-container">
 
+  <div class="faq-item">
+    <button class="faq-question">
+      ¿Qué servicios ofrecen?
+      <span>+</span>
+    </button>
+    <div class="faq-answer">
+      <p>Ofrecemos diseño web, tiendas online y soporte técnico.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      ¿Cuánto tarda un proyecto?
+      <span>+</span>
+    </button>
+    <div class="faq-answer">
+      <p>Normalmente entre 1 y 3 semanas dependiendo del proyecto.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      ¿Trabajan remoto?
+      <span>+</span>
+    </button>
+    <div class="faq-answer">
+      <p>Sí, trabajamos con clientes de cualquier país.</p>
+    </div>
+  </div>
+
+</div>
+
+<style>
+.faq-container {
+  max-width: 700px;
+  margin: 40px auto;
+  font-family: Arial, sans-serif;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.faq-question {
+  width: 100%;
+  background: #111;
+  color: white;
+  padding: 15px;
+  border: none;
+  text-align: left;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.faq-question:hover {
+  background: #333;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: #f5f5f5;
+  border-radius: 0 0 8px 8px;
+}
+
+.faq-answer p {
+  padding: 15px;
+  margin: 0;
+  color: #333;
+}
+</style>
+
+<script>
+const questions = document.querySelectorAll(".faq-question");
+
+questions.forEach(question => {
+  question.addEventListener("click", () => {
+    const answer = question.nextElementSibling;
+
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+      question.querySelector("span").textContent = "+";
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+      question.querySelector("span").textContent = "−";
+    }
+  });
+});
+</script>D
   <footer>
     <p>2026 - Mi nombre</p>
   </footer>
@@ -93,8 +189,8 @@
   z-index: 99;
   border: none;
   outline: none;
-  background-color: #0aa2e9;
-  color: rgb(13, 214, 171);
+  background-color: #333;
+  color: white;
   cursor: pointer;
   padding: 12px 15px;
   border-radius: 50%;
@@ -104,7 +200,7 @@
 }
 
 #btnTop:hover {
-  background-color: #000000;
+  background-color: #555;
 }
 </style>
 
