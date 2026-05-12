@@ -13,6 +13,55 @@
     <header>
         <h1>Mi Página Personal</h1>
     </header>
+    <!-- Botón modo oscuro -->
+<button id="modoOscuroBtn" onclick="cambiarModo()">
+    🌙
+</button>
+
+<style>
+    body {
+        transition: background-color 0.5s, color 0.5s;
+    }
+
+    .oscuro {
+        background-color: #121212;
+        color: white;
+    }
+
+    .oscuro header,
+    .oscuro nav,
+    .oscuro section,
+    .oscuro footer {
+        background-color: #1e1e1e;
+        color: white;
+    }
+
+    #modoOscuroBtn {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+        cursor: pointer;
+        box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        z-index: 1000;
+    }
+
+    #modoOscuroBtn:hover {
+        background-color: #333;
+    }
+</style>
+
+<script>
+    function cambiarModo() {
+        document.body.classList.toggle("oscuro");
+    }
+</script>
 
     <nav>
         <a href="#sobre-mi">Sobre mí</a>
