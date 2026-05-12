@@ -169,6 +169,87 @@
         transform: scale(1.1);
     }
 </style>
+<section class="faq">
+    <h2>Preguntas Frecuentes</h2>
+
+    <button class="acordeon">
+        ¿Qué servicios ofreces?
+    </button>
+    <div class="panel">
+        <p>Ofrezco atención psicológica y orientación personal.</p>
+    </div>
+
+    <button class="acordeon">
+        ¿Cómo puedo contactarte?
+    </button>
+    <div class="panel">
+        <p>Puedes escribirme por WhatsApp o correo electrónico.</p>
+    </div>
+
+    <button class="acordeon">
+        ¿Atiendes en línea?
+    </button>
+    <div class="panel">
+        <p>Sí, también realizo consultas virtuales.</p>
+    </div>
+</section>
+
+<style>
+    .faq {
+        width: 80%;
+        margin: auto;
+        margin-top: 40px;
+    }
+
+    .acordeon {
+        background-color: #ff69b4;
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        font-size: 18px;
+        margin-top: 10px;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+    .acordeon:hover {
+        background-color: #ff1493;
+    }
+
+    .panel {
+        padding: 0 15px;
+        display: none;
+        background-color: #f9f9f9;
+        overflow: hidden;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .panel p {
+        padding: 15px 0;
+    }
+</style>
+
+<script>
+    const acordeones = document.querySelectorAll(".acordeon");
+
+    acordeones.forEach(acordeon => {
+        acordeon.addEventListener("click", function() {
+
+            this.classList.toggle("activo");
+
+            const panel = this.nextElementSibling;
+
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    });
+</script>
 
 
 </body>
