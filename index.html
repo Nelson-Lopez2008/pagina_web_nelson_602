@@ -69,3 +69,23 @@
 
 </body>
 </html>
+<script>
+    // Mostrar botón al bajar
+    window.onscroll = function () {
+        let boton = document.getElementById("btnSubir");
+
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            boton.style.display = "block";
+        } else {
+            boton.style.display = "none";
+        }
+    };
+
+    // Subir arriba suavemente
+    function subirArriba() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+</script>
